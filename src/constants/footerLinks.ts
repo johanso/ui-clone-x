@@ -1,8 +1,8 @@
 export const FOOTER_LINKS = [
-  { name: "Condiciones de Servicio", href: "/terms" },
-  { name: "Política de Privacidad", href: "/privacy" },
-  { name: "Política de cookies", href: "/cookies" },
-  { name: "Accesibilidad", href: "/accessibility" },
-  { name: "Información de anuncios", href: "/ads" },
-  { name: "Más opciones", href: "/more" }
+  { name: "Condiciones de Servicio", href: "/" },
+  { name: "Política de Privacidad", href: "/" },
+  { name: "Política de cookies", href: "/" },
+  { name: "Accesibilidad", href: "/" },
+  { name: "Información de anuncios", href: "/" },
+  { name: "Más opciones", href: "/" }
 ] as const;
