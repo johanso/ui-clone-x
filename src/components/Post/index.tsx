@@ -1,6 +1,5 @@
 // src/components/Post/index.tsx
 import Video from "../commons/Video";
-import Link from "next/link";
 import { PostProps } from './types';
 import { formatDate } from '../../lib/utils';
 import Image from "../commons/Image";
@@ -77,7 +76,7 @@ const Post = ({ type = 'status', post }: PostProps) => {
                 )}
               </div>
             </span>
-            <PostInfo postId={post.id} />
+            <PostInfo />
           </div>
 
           {/* Content */}

@@ -14,7 +14,7 @@ interface PostInteractionsProps {
 const PostInteractions = ({ 
   initialStats = { comments: 0, reposts: 0, likes: 0 } 
 }: PostInteractionsProps) => {
-  const [stats, setStats] = useState(initialStats);
+  const [stats,] = useState(initialStats);
 
   return (
     <div className="flex items-center justify-between gap-4 lg:gap-16 my-2 text-textGray">

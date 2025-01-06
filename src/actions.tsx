@@ -1,9 +1,8 @@
 'use server';
 
-import { MediaSettings } from "@/types/post";
 import { imagekit } from "./utils";
 
-export async function shareAction(formData: FormData, settings: MediaSettings) {
+export async function shareAction(formData: FormData) {
   try {
     const file = formData.get('file') as File;
     const desc = formData.get('desc') as string;

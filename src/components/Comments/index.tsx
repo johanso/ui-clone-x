@@ -3,11 +3,7 @@ import Image from "../commons/Image";
 import Post from "../Post";
 import { MOCK_POSTS } from "@/constants/mockData";
 
-interface CommentsProps {
-  postId: string;
-}
-
-const Comments = ({ postId }: CommentsProps) => {
+const Comments = () => {
   // Usamos algunos posts de MOCK_POSTS como comentarios de ejemplo
   const commentPosts = MOCK_POSTS.slice(0, 3);
 
