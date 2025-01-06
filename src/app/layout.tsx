@@ -1,19 +1,11 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// src/app/layout.tsx
+import { LayoutProps } from '@/types/layout';
 import { SITE_CONFIG } from '@/constants/config';
-import AsideLeft from "./components/asideLeft";
-import AsideRight from "./components/asideRight";
+import LeftBar from "@/components/layout/LeftBar";
+import RightBar from "@/components/layout/RightBar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
@@ -34,35 +26,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: SITE_CONFIG.name,
-    description: SITE_CONFIG.description,
-    images: [SITE_CONFIG.ogImage],
-  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, modal }: LayoutProps) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <main className="max-w-screen-md lg:max-w-screen-lg xl-w-screen-xl xxl:max-w-screen-xxl mx-auto flex justify-between">
-          <aside className="px-2 xsm:px-4 xxl:px-8">
-            <AsideLeft />
-          </aside>
-          <section className="flex-1 lg:min-w-[600px] border-x-[1px] border-borderGray">
+      <body className="min-h-screen bg-black text-textGrayLight antialiased">
+        <div className="mx-auto flex max-w-screen-md justify-between lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl">
+          <header className="sticky top-0 z-40 h-screen px-2 xsm:px-4 xxl:px-8">
+            <LeftBar />
+          </header>
+          
+          <main className="flex-1 border-x border-borderGray lg:min-w-[600px]">
             {children}
-          </section>
-          <aside className="hidden lg:flex ml-4 md:ml-8 flex-1">
-            <AsideRight />
+            {modal}
+          </main>
+          
+          <aside className="sticky top-0 hidden h-screen flex-1 lg:flex ml-4 md:ml-8">
+            <RightBar />
           </aside>
-        </main>
+        </div>
       </body>
     </html>
   );

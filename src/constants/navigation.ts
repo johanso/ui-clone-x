@@ -1,26 +1,16 @@
 export const NAVIGATION_ITEMS = [
   {
+    id: 1,
     title: 'For you',
     path: '/',
-    active: true
+    active: true,
+    showOnMobile: false
   },
   {
+    id: 2,
     title: 'Following',
-    path: '/following'
-  },
-  {
-    title: 'React.js',
-    path: '/topic/reactjs',
-    showOnMobile: false
-  },
-  {
-    title: 'Javascript',
-    path: '/topic/javascript',
-    showOnMobile: false
-  },
-  {
-    title: 'CSS',
-    path: '/topic/css',
+    path: '/',
+    active: false,
     showOnMobile: false
   }
 ] as const;

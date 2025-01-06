@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Link from "next/link";
+import Image from "../commons/Image";
 
 const menuList = [
   {
@@ -63,7 +63,8 @@ const menuList = [
     icon: "more.svg",
   },
 ];
-const AsideLeft = () => {
+
+const LeftBar = () => {
   return (
     <div className="h-screen sticky top-0 flex flex-col justify-between pt-2 pb-8">
       {/* LOGO MENU BUTTON */}
@@ -108,7 +109,7 @@ const AsideLeft = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 relative rounded-full overflow-hidden">
-            <Image src="/general/avatar.png" alt="lama dev" width={100} height={100} />
+            <Image src="/general/avatar.png" alt="lama dev" width={100} height={100} useTransformation={true} />
           </div>
           <div className="hidden xxl:flex flex-col">
             <span className="font-bold">Lama Dev</span>
@@ -118,7 +119,7 @@ const AsideLeft = () => {
         <div className="hidden xxl:block cursor-pointer font-bold">...</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AsideLeft
+export default LeftBar;
