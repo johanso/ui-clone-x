@@ -52,7 +52,7 @@ const Share = () => {
     <div className="p-4 border-b border-borderGray">
       <form
         className="flex gap-4"
-        action={(formData) => shareAction(formData, settings)}
+        action={() => console.log("Hi")}
       >
         {/* Avatar */}
         <div className="relative w-10 h-10 rounded-full overflow-hidden">
@@ -70,7 +70,7 @@ const Share = () => {
           <div className="relative">
             <textarea
               name="desc"
-              placeholder="What is happening?!"
+              placeholder="What is happening?"
               className="w-full bg-transparent outline-none placeholder:text-textGray text-xl resize-none"
               rows={1}
               onChange={(e) => {

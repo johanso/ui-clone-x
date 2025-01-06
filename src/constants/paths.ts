@@ -11,6 +11,6 @@ export const ASSET_PATHS = {
     more: '/icons/more.svg',
   },
   general: {
-    avatar: '/general/avatar.png',
+    avatar: '/general/avatar.jpg',
   },
 } as const;

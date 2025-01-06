@@ -27,30 +27,6 @@ const menuList = [
     icon: "message.svg",
   },
   {
-    id: 5,
-    name: "Bookmarks",
-    link: "/",
-    icon: "bookmark.svg",
-  },
-  {
-    id: 6,
-    name: "Jobs",
-    link: "/",
-    icon: "job.svg",
-  },
-  {
-    id: 7,
-    name: "Communities",
-    link: "/",
-    icon: "community.svg",
-  },
-  {
-    id: 8,
-    name: "Premium",
-    link: "/",
-    icon: "logo.svg",
-  },
-  {
     id: 9,
     name: "Profile",
     link: "/",
@@ -93,13 +69,13 @@ const LeftBar = () => {
         </div>
         {/* BUTTON */}
         <Link
-          href="/compose/post"
+          href="/"
           className="bg-white text-black rounded-full w-12 h-12 flex items-center justify-center xxl:hidden"
         >
           <Image src="icons/post.svg" alt="new post" width={24} height={24} />
         </Link>
         <Link
-          href="/compose/post"
+          href="/"
           className="hidden xxl:block bg-white text-black rounded-full font-bold py-2 px-20"
         >
           Post
@@ -109,11 +85,11 @@ const LeftBar = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 relative rounded-full overflow-hidden">
-            <Image src="/general/avatar.png" alt="lama dev" width={100} height={100} useTransformation={true} />
+            <Image src="/general/avatar.jpg" alt="Johanso" width={100} height={100} useTransformation={true} />
           </div>
           <div className="hidden xxl:flex flex-col">
-            <span className="font-bold">Lama Dev</span>
-            <span className="text-sm text-textGray">@lamaWebDev</span>
+            <span className="font-bold">Johanso</span>
+            <span className="text-sm text-textGray">@johansodev</span>
           </div>
         </div>
         <div className="hidden xxl:block cursor-pointer font-bold">...</div>

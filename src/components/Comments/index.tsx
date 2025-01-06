@@ -16,7 +16,7 @@ const Comments = ({ postId }: CommentsProps) => {
       <form className="flex items-center justify-between gap-4 p-4 border-b border-borderGray">
         <div className="relative w-10 h-10 rounded-full overflow-hidden">
           <Image
-            src="general/avatar.png"
+            src="general/avatar.jpg"
             alt="User Avatar"
             width={100}
             height={100}

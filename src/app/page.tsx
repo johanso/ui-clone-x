@@ -8,7 +8,7 @@ import Feed from '@/components/features/Feed';
 export default function HomePage() {
   return (
     <section className="min-h-screen">
-      <nav className="border-b border-borderGray px-4 pt-4">
+      <nav className="border-b border-borderGray px-4 pt-4 sticky top-0 z-40 bg-[rgba(0,0,0,0.6)] backdrop-blur-sm">
         <ul className="flex justify-around font-bold text-textGray">
           {NAVIGATION_ITEMS.map((item) => (
             <li

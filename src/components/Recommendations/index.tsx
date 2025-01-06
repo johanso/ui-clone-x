@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "./commons/Image";
+import Image from "../commons/Image";
 
 const Recommendations = () => {
   return (
@@ -9,7 +9,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image src="general/avatar.png" alt="John Doe" width={100} height={100} useTransformation={true}/>
+            <Image src="general/avatar.jpg" alt="John Doe" width={100} height={100} useTransformation={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>
@@ -23,7 +23,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image src="general/avatar.png" alt="John Doe" width={100} height={100} useTransformation={true}/>
+            <Image src="general/avatar.jpg" alt="John Doe" width={100} height={100} useTransformation={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>
@@ -37,7 +37,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image src="general/avatar.png" alt="John Doe" width={100} height={100} useTransformation={true}/>
+            <Image src="general/avatar.jpg" alt="John Doe" width={100} height={100} useTransformation={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>

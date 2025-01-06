@@ -1,42 +1,39 @@
-"use server";
+// src/actions/index.ts
+'use server';
 
+import { MediaSettings } from "@/types/post";
 import { imagekit } from "./utils";
 
-export const shareAction = async (
-  formData: FormData,
-  settings: { type: "original" | "wide" | "square"; sensitive: boolean }
-) => {
-  const file = formData.get("file") as File;
-  // const desc = formData.get("desc") as string;
+export async function shareAction(formData: FormData, settings: MediaSettings) {
+  try {
+    const file = formData.get('file') as File;
+    const desc = formData.get('desc') as string;
 
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
+    if (file) {
+      // Convertir el archivo a buffer
+      const buffer = Buffer.from(await file.arrayBuffer());
+      
+      // Subir a ImageKit sin metadata por ahora
+      const upload = await imagekit.upload({
+        file: buffer,
+        fileName: file.name,
+        // Por ahora omitimos las custom metadata
+        // useUniqueFileName: true,
+        // customMetadata: {
+        //   sensitive: settings.sensitive
+        // }
+      });
 
-  const transformation = `w-600, ${
-    settings.type === "square"
-      ? "ar-1-1"
-      : settings.type === "wide"
-      ? "ar-16-9"
-      : ""
-  }`;
-
-  imagekit.upload(
-    {
-      file: buffer,
-      fileName: file.name,
-      folder: "/posts",
-      ...(file.type.includes("image") && {
-        transformation: {
-          pre: transformation,
-        },
-      }),
-      customMetadata: {
-        sensitive: settings.sensitive,
-      },
-    },
-    function (error, result) {
-      if (error) console.log(error);
-      else console.log(result);
+      // Aquí podrías guardar en tu base de datos
+      console.log('Upload successful:', upload);
     }
-  );
-};
+
+    // Aquí guardarías el post en tu base de datos
+    console.log('Post content:', desc);
+    
+    return { success: true };
+  } catch (error) {
+    console.error('Error in shareAction:', error);
+    throw error;
+  }
+}

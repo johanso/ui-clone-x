@@ -1,4 +1,4 @@
-import Image from "./commons/Image"
+import Image from "../commons/Image"
 
 const Search = () => {
   return (

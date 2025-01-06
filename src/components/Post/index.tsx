@@ -11,7 +11,7 @@ const Post = ({ type = 'status', post }: PostProps) => {
   if (!post) return null;
 
   return (
-    <article className="p-4 border-y border-borderGray">
+    <article className="p-4 pb-2 border-y border-borderGray">
       {/* Repost Header */}
       {post.repostedBy && (
         <div className="flex items-center gap-2 text-sm text-textGray mb-2 font-bold">
@@ -81,39 +81,44 @@ const Post = ({ type = 'status', post }: PostProps) => {
           </div>
 
           {/* Content */}
-          <Link href={`/${post.author.username}/status/${post.id}`}>
-            <p className={type === "status" ? "text-lg" : ""}>
-              {post.content}
-            </p>
-          </Link>
+       
+          <p className={type === "status" ? "text-md ml-14" : ""}>
+            {post.content}
+          </p>
 
           {/* Media */}
-          {post.media && (
-            post.media.type === "image" ? (
-              <Image
-                src={post.media.url}
-                alt=""
-                width={post.media.width || 600} // Aseguramos un valor por defecto
-                height={post.media.height || 600} // Aseguramos un valor por defecto
-                className={post.media.sensitive ? "blur-lg" : ""}
-              />
-            ) : (
-              <Video
-                path={post.media.url}
-                className={post.media.sensitive ? "blur-lg" : ""}
-              />
-            )
-          )}
+          {post.media && 
+            <div className="mt-2 ml-14 rounded-lg overflow-hidden">
+              {
+                post.media.type === "image" ? (
+                  <Image
+                    src={post.media.url}
+                    alt=""
+                    width={post.media.width || 600} // Aseguramos un valor por defecto
+                    height={post.media.height || 600} // Aseguramos un valor por defecto
+                    className={post.media.sensitive ? "blur-lg" : ""}
+                  />
+                ) : (
+                  <Video
+                    path={post.media.url}
+                    className={post.media.sensitive ? "blur-lg" : ""}
+                  />
+                )
+              }
+            </div>
+          }
 
           {/* Timestamp for status view */}
           {type === "status" && (
-            <time className="text-textGray">
+            <time className="text-textGray hidden">
               {formatDate(post.createdAt, 'long')}
             </time>
           )}
 
           {/* Interactions */}
-          <PostInteractions initialStats={post.stats} />
+          <div className="ml-14">
+            <PostInteractions initialStats={post.stats} />
+          </div>
         </div>
       </div>
     </article>
