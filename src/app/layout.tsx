@@ -42,7 +42,7 @@ export default function RootLayout({ children, modal }: LayoutProps) {
             {modal}
           </main>
           
-          <aside className="sticky top-0 hidden h-screen flex-1 lg:flex ml-4 md:ml-8">
+          <aside className="hidden h-screen flex-1 lg:flex ml-4 md:ml-8">
             <RightBar />
           </aside>
         </div>

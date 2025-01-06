@@ -26,7 +26,6 @@ const Image = ({
   const imagePath = src.startsWith('/') ? src.slice(1) : src;
   const imageUrl = `${urlEndpoint}/${imagePath}`;
 
-  // Si no se proporciona alguna dimensión, usamos un valor por defecto
   const finalWidth = width || 100;
   const finalHeight = height || 100;
   

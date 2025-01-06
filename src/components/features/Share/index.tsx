@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import NextImage from "next/image";
-import { shareAction } from "@/actions";
 import { ASSET_PATHS } from "@/constants/paths";
 import Image from "@/components/commons/Image";
 import { MediaSettings } from "@/types/post";

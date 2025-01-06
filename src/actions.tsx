@@ -1,4 +1,3 @@
-// src/actions/index.ts
 'use server';
 
 import { MediaSettings } from "@/types/post";
@@ -17,11 +16,6 @@ export async function shareAction(formData: FormData, settings: MediaSettings) {
       const upload = await imagekit.upload({
         file: buffer,
         fileName: file.name,
-        // Por ahora omitimos las custom metadata
-        // useUniqueFileName: true,
-        // customMetadata: {
-        //   sensitive: settings.sensitive
-        // }
       });
 
       // Aquí podrías guardar en tu base de datos
