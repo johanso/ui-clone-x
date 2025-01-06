@@ -1,17 +1,39 @@
+# X-UI Clone (Twitter/X Clone)
+
+A modern Twitter/X clone built with Next.js 15, React 19, TypeScript, and Tailwind CSS. Features a responsive design and real-time interactions.
+
+[Live Demo](https://ui-clone-x.vercel.app/)
+
+
+## Features
+
+- Server-Side Rendering (SSR)
+- ImageKit for media handling
+- Responsive layout
+- Post creation & sharing
+- Media upload with preview
+- Real-time interactions
+
+## Tech Stack
+
+- Next.js 15.1.0
+- React 19
+- TypeScript
+- Tailwind CSS
+- ImageKit
+- Vercel (Deployment)
+
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Clone repository
+git clone https://github.com/yourusername/x-ui-clone.git
+
+# Install dependencies
+npm install
+
+# Setup environment variables
+cp .env.example .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
